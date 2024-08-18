@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const PORT = process.env.MYSQL_PORT || 3001;
+const PORT = 3001;
 const multer = require("multer");
 const cloudinary = require("./cloudinary");
 const pool = require("./database/bd");
