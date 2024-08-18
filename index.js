@@ -1,18 +1,18 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
-const PORT = 3001;
+const PORT = process.env.MYSQL_PORT || 3001;
 const multer = require("multer");
 const cloudinary = require("./cloudinary");
 const pool = require("./database/bd");
 const cors = require("cors");
 const upload = multer({ dest: "uploads/" }); // Carpeta temporal para archivos
-require("dotenv").config();
 
 app.use(express.json());
 
 // Configuración de CORS
 const corsOptions = {
-  origin: "http://localhost:5173  ", // Ajusta este valor si es necesario
+  origin: "http://localhost:5173" || "", // Ajusta este valor si es necesario
   methods: "GET,POST,PUT,DELETE",
   allowedHeaders: "Content-Type",
 };
