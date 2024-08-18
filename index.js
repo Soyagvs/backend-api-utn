@@ -19,6 +19,9 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.get("/", (req, res) => {
+  res.send("servidor ok");
+});
 // Ruta para crear un nuevo post
 app.post("/create", upload.single("image"), async (req, res) => {
   try {
@@ -140,7 +143,6 @@ app.delete("/posts/:id", async (req, res) => {
     res.status(500).json({ message: "Error interno del servidor" });
   }
 });
-
 
 app.listen(PORT, () => {
   console.log(`Servidor activado en el puerto ${PORT}`);
