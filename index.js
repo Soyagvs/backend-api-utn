@@ -12,7 +12,7 @@ app.use(express.json());
 
 // Configuración de CORS
 const corsOptions = {
-  origin: "https://diplo-react-tp.vercel.app/" || "http://localhost:5173", // Ajusta este valor si es necesario
+  origin: "https://diplo-react-tp.vercel.app/", // Ajusta este valor si es necesario
   methods: "GET,POST,PUT,DELETE",
   allowedHeaders: "Content-Type",
 };
